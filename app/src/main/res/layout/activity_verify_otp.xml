@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerifyOTP">
+
+    <RelativeLayout
+        android:id="@+id/title_vrfotp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/custom_title">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_back_black"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:text="Xác nhận mã OTP"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginStart="60dp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_vrfotp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_typeyourotp"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="Kiểm tra tin nhắn của bạn"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_notetypeyourotp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Mã gồm 6 chữ số đã được gửi đến số"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/tv_notephone"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text=""
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center_horizontal" />
+
+        <LinearLayout
+            android:id="@+id/et_inputotp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_inputotp1"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:background="@drawable/custom_et_input"/>
+
+            <EditText
+                android:id="@+id/et_inputotp2"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:background="@drawable/custom_et_input"/>
+
+            <EditText
+                android:id="@+id/et_inputotp3"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:background="@drawable/custom_et_input"/>
+
+            <EditText
+                android:id="@+id/et_inputotp4"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:background="@drawable/custom_et_input"/>
+
+            <EditText
+                android:id="@+id/et_inputotp5"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:background="@drawable/custom_et_input"/>
+
+            <EditText
+                android:id="@+id/et_inputotp6"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:inputType="number"
+                android:maxLength="1"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:background="@drawable/custom_et_input"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_send_otp_again"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Gửi lại mã"
+            android:textSize="20sp"
+            android:textColor="@color/blue"
+            android:gravity="center_horizontal"/>
+
+        <FrameLayout
+            android:id="@+id/verifyphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_verifyotp"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/custom_button_register01"
+                android:hint="Xác nhận"
+                android:textColorHint="@color/black"
+                android:textSize="20sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:src="@drawable/logo02"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Bằng cách tiếp tục, bạn đồng ý với Thỏa thuận sử dụng và thừa nhận rằng bạn đã đọc Chính sách bảo mật"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:gravity="center_horizontal"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

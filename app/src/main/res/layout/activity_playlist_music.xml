@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlaylistMusic">
+
+    <RelativeLayout
+        android:id="@+id/title_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:background="@drawable/custom_title">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_black"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:layout_centerInParent="true"
+            android:text="Danh sách"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:textStyle="bold"/>
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/playlist_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@+id/title_playlist"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:weightSum="100">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_play_black"
+            android:background="@color/white"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Tất cả"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_weight="70"/>
+
+        <ImageView
+            android:id="@+id/btn_sort"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_filter_black"
+            android:background="@color/white"
+            android:layout_weight="10"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_search_black"
+            android:background="@color/white"
+            android:layout_weight="10"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_sort_black"
+            android:background="@color/white"
+            android:layout_weight="10"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_music_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/playlist_toolbar">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

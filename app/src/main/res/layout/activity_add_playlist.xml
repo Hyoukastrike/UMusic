@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".AddPlaylistActivity">
+
+    <RelativeLayout
+        android:id="@+id/title_addplaylist"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_height="80dp"
+        android:background="@drawable/custom_title">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_back_black"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:text="Tạo playlist"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="100dp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/title_addplaylist"
+        android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_inputid_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:paddingStart="10dp"
+        android:hint="ID"
+        android:inputType="text"
+        android:background="@drawable/custom_et_input"/>
+
+    <EditText
+        android:id="@+id/et_inputname_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:paddingStart="10dp"
+        android:hint="Nhập tên playlist"
+        android:inputType="text"
+        android:background="@drawable/custom_et_input"/>
+
+    <FrameLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    
+        <Button
+            android:id="@+id/btn_add_playlist"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/custom_button_register01"
+            android:hint="Tạo playlist"
+            android:textColorHint="@color/black"
+            android:textSize="18sp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

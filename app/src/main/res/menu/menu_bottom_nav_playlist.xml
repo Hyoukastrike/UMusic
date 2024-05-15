@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_music"
+        android:title="Bài hát"
+        android:icon="@drawable/ic_music_black">
+    </item>
+
+    <item android:id="@+id/action_playlist"
+        android:title="Playlist"
+        android:icon="@drawable/ic_playlist_black">
+    </item>
+
+    <item android:id="@+id/action_video"
+        android:title="Video"
+        android:icon="@drawable/ic_video_black">
+    </item>
+</menu>

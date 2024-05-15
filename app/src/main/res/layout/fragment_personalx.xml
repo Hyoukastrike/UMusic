@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+        
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_noti_white"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_setting_black"/>
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ln_login"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:weightSum="100"
+        android:layout_below="@id/toolbar">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_ava"
+            android:layout_width="86dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:layout_weight="10"
+            android:src="@drawable/default_avatar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_weight="90"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="Tên đăng nhập"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_user_info"
+                android:layout_width="72.27dp"
+                android:layout_height="24dp"
+                android:gravity="center_horizontal"
+                android:text="Hồ sơ"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:drawableRight="@drawable/ic_arrow_right_black">
+            </TextView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/follower"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_below="@+id/ln_login">
+
+
+        <LinearLayout
+            android:layout_width="181.5dp"
+            android:layout_height="74dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="50"
+            android:background="@drawable/custom_button_personal02"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="19dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đang theo dõi"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="181.5dp"
+            android:layout_height="74dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="50"
+            android:background="@drawable/custom_button_personal02"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="19dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Người theo dõi"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:textSize="13sp"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/premium"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_below="@+id/follower">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="50"
+            android:background="@drawable/custom_button_personal03"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_star_black"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Tài khoản VIP"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gói miễn phí"
+                    android:layout_marginTop="5dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/music_tape"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_below="@+id/premium">
+
+
+        <LinearLayout
+            android:id="@+id/music_playlist_dowload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="50"
+            android:background="@drawable/custom_button_personal01"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_dowload_black"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="86dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Nhạc Đã Tải"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 bài hát"
+                    android:layout_marginTop="5dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="50"
+            android:background="@drawable/custom_button_personal01"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_time_black"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="99dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Nghe gần đây"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="0 bài hát"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/favorite"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_below="@+id/music_tape">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="50"
+            android:background="@drawable/custom_button_personal01"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_favorite_black"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Yêu thích"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 bài hát"
+                    android:layout_marginTop="5dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/favorite"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/custom_et_input02"
+            android:layout_weight="50">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_playlistadd_black"/>
+
+            <TextView
+                android:id="@+id/enjoy_playlist01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chưa có danh sách phát"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/enjoy_playlist02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hãy tạo cho riêng bạn"
+                android:textSize="11sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/count_playlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:text="Playlist Đã Tạo (0)"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <ImageView
+                    android:id="@+id/btn_add_playlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_add_black"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/custom_et_input02"
+            android:layout_weight="50">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_playlistadd_black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chưa có danh sách phát"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hãy tạo cho riêng bạn"
+                android:textSize="11sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:text="Playlist Yêu Thích (0)"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_add_black"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

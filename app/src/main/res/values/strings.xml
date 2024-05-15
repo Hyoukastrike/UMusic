@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">UMusic</string>
+    <string name="action_play">Đang nghe</string>
+    <string name="action_home">Khám phá</string>
+    <string name="action_personal">Cá nhân</string>
+    <string name="action_personalx">Cá nhân</string>
+    <string name="action_filter">Lọc</string>
+    <string name="action_search">Tìm kiếm</string>
+    <string name="action_list">Liệt kê</string>
+</resources>

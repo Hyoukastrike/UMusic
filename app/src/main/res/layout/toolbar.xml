@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_play_black"
+            android:background="@color/white"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:text="Tất cả"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_weight="70"/>
+
+        <ImageView
+            android:id="@+id/btn_sort"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_filter_black"
+            android:background="@color/white"
+            android:layout_weight="10"/>
+        
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            app:searchIcon="@drawable/ic_search_black"
+            android:hint="Tìm kiêm"
+            app:queryHint="Tìm kiếm"/>
+
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_sort_black"
+            android:background="@color/white"
+            android:layout_weight="10"/>
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>

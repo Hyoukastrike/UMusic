@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/ln_login"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:weightSum="100">
+
+        <ImageView
+            android:layout_width="86dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:layout_weight="10"
+            android:src="@drawable/default_avatar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_weight="90"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:text="Đăng nhập"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_margin="10dp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_login"
+                android:layout_width="107.27dp"
+                android:layout_height="24dp"
+                android:text="Đăng nhập"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:drawableRight="@drawable/ic_arrow_right_black">
+            </TextView>
+            
+        </LinearLayout>
+
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="100"
+        android:layout_below="@+id/ln_login">
+
+        <LinearLayout
+            android:id="@+id/music_playlist_dowload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="50"
+            android:background="@drawable/custom_button_personal01"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_dowload_black"/>
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+                
+                <TextView
+                    android:layout_width="86dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Nhạc Đã Tải"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 bài hát"
+                    android:layout_marginTop="5dp"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"/>
+                
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="50"
+            android:background="@drawable/custom_button_personal01"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_time_black"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="74dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="99dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Nghe gần đây"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="0 bài hát"
+                    android:textSize="13sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".LoginScreen">
+
+    <LinearLayout
+        android:id="@+id/ln_close"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="right"
+        android:layout_alignParentTop="true"
+        android:weightSum="100">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_close_black"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_below="@+id/ln_close"
+        android:layout_alignParentBottom="true"
+        android:weightSum="100">
+
+        <ImageView
+            android:layout_width="204dp"
+            android:layout_height="204dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:id="@+id/btn_register_phone"
+            android:layout_width="322dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="25dp"
+            android:background="@drawable/custom_button_login01"
+            android:drawableStart="@drawable/ic_phone_white"
+            android:hint="Sử dụng số điện thoại"
+            android:textColorHint="@color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_width="322dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="20dp"
+            android:background="@drawable/custom_button_login02"
+            android:hint="Tiếp tục với Facebook"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_facebook"/>
+
+        <Button
+            android:layout_width="322dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="20dp"
+            android:background="@drawable/custom_button_login02"
+            android:hint="Tiếp tục với Google"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_google"/>
+
+        <Button
+            android:id="@+id/btn_register_email"
+            android:layout_width="322dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:paddingLeft="@dimen/_20sdp"
+            android:background="@drawable/custom_button_login02"
+            android:hint="Tiếp tục với Email"
+            android:gravity="center"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:drawableStart="@drawable/ic_mail_white" />
+
+        <TextView
+            android:layout_width="287dp"
+            android:layout_height="wrap_content"
+            android:text="Bằng cách tiếp tục, bạn đồng ý với Thỏa thuận sử dụng và thừa nhận rằng bạn đã đọc Chính sách bảo mật."
+            android:gravity="center"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:id="@+id/btn_signin"
+            android:layout_width="322dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@drawable/custom_button_login03"
+            android:hint="Đăng nhập bằng Email"
+            android:textColorHint="@color/black"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

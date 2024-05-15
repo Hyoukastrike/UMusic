@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlaylistMusic">
+
+    <RelativeLayout
+        android:id="@+id/title_playlistx"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/custom_title">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_black"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:layout_centerInParent="true"
+            android:text="Danh sách"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:textStyle="bold"/>
+
+
+
+    </RelativeLayout>
+    
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/playlist_toolbarx">
+    </FrameLayout>
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/animated_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:layout_below="@+id/title_playlistx"
+        app:abb_indicatorAppearance="round"
+        app:abb_indicatorHeight="4dp"
+        app:abb_indicatorMargin="16dp"
+        app:abb_textSize="16sp"
+        app:abb_tabColor="@color/black"
+        app:abb_tabColorSelected="@color/blue"
+        app:abb_indicatorColor="@color/yellow"
+        app:abb_tabColorDisabled="#06C7E1"
+        app:abb_selectedTabType="text"
+        android:background="#A4F4FF"
+        app:abb_indicatorLocation="bottom"
+        app:abb_tabs="@menu/menu_bottom_nav_playlist"/>
+
+    <LinearLayout
+        android:id="@+id/playlist_toolbarx"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@+id/animated_bottom_nav"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:weightSum="100">
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_play_black"
+            android:background="@color/white"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Tất cả"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_weight="90"/>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_filter_black"
+
+            android:background="@color/white"/>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_search_black"
+            android:background="@color/white"/>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_sort_black"
+            android:background="@color/white"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

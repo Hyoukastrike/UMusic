@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "660829873789",
+    "project_id": "umusic-a6655",
+    "storage_bucket": "umusic-a6655.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660829873789:android:f45b844172de3352f97314",
+        "android_client_info": {
+          "package_name": "com.example.umusic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIapU0-UCqmshstJXZ8Q9ZQxs8xjfAABg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

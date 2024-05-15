@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignInEmail">
+
+
+    <RelativeLayout
+        android:id="@+id/title_loginemail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/custom_title">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/ic_back_black"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:text="Đăng ký bằng Email"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_loginemail"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_typeyouremail"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:text="Nhập email của bạn"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_notetypeyouremail"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="́Email sẽ được tự động đăng ký sau khi xác thực thành công"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            android:id="@+id/et_inputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="10dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:imeOptions="actionNext"
+            android:maxLength="100"
+            android:background="@drawable/custom_et_input"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/et_inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingStart="10dp"
+            android:hint="Mật khẩu"
+            android:inputType="textPassword"
+            android:imeOptions="actionNext"
+            android:maxLength="100"
+            android:background="@drawable/custom_et_input"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/et_inputConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="10dp"
+            android:hint="Nhập lại Mật khẩu"
+            android:inputType="textPassword"
+            android:imeOptions="actionNext"
+            android:maxLength="100"
+            android:background="@drawable/custom_et_input"
+            android:textColor="@color/black"/>
+
+        <FrameLayout
+            android:id="@+id/loginemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/btn_signupemail"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/custom_button_register01"
+                android:hint="Đăng ký"
+                android:textColorHint="@color/black"
+                android:textSize="20sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đã có tài khoản?"
+                android:layout_gravity="center"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/btn_signin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đăng nhập"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:textColor="@color/blue"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

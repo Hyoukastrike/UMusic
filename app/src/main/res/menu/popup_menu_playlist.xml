@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/music_favor"
+        android:title="Thêm vào danh sách yêu thích"
+        android:icon="@drawable/ic_favorite_black"/>
+
+    <item android:id="@+id/delete_music"
+        android:title="Xóa playlist"
+        android:icon="@drawable/ic_delete_black"/>
+
+</menu>

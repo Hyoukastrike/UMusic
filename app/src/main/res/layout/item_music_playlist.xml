@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EFEFEF"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:gravity="center_vertical"
+    android:weightSum="100">
+
+    <ImageView
+        android:id="@+id/img_music_playlist"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/musical_note"/>
+
+    <TextView
+        android:id="@+id/tv_music_playlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:padding="10dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text="Tên Bài Hát"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:layout_weight="100"/>
+
+    <ImageButton
+        android:id="@+id/btn_more_playlist"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:background="#EFEFEF"
+        android:src="@drawable/ic_more_black"/>
+
+
+</LinearLayout>

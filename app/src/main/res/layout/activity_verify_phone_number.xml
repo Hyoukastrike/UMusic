@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerifyPhoneNumber">
+
+    <RelativeLayout
+        android:id="@+id/title_vrfphone"
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        android:background="@drawable/custom_title">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back_black"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"/>
+        
+        <TextView
+            android:layout_width="133dp"
+            android:layout_height="39dp"
+            android:text="Đăng ký"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+    
+    <TextView
+        android:id="@+id/tv_typeyourphone"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_below="@+id/title_vrfphone"
+        android:text="Nhập số điện thoại của bạn"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_notetypeyourphone"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/tv_typeyourphone"
+        android:text="Số điện thoại sẽ được tự động đăng ký sau khi xác thực thành công"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal" />
+    
+    <LinearLayout
+        android:id="@+id/inputphoneregis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/tv_notetypeyourphone"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="VN +84"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <EditText
+            android:id="@+id/et_inputphoneregis"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center"
+            android:hint="Nhập số điện thoại của bạn"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:background="@drawable/custom_et_input"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/verifyphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputphoneregis">
+
+        <Button
+            android:id="@+id/btn_verifyphone"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/custom_button_register01"
+            android:hint="Gửi mã"
+            android:textColorHint="@color/black"
+            android:textSize="20sp" />
+        
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_below="@+id/verifyphone"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+        
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="52.43dp"
+            android:src="@drawable/logo02"
+            android:layout_marginLeft="10dp"/>
+        
+        <TextView
+            android:layout_width="311dp"
+            android:layout_height="52.43dp"
+            android:text="Bằng cách tiếp tục, bạn đồng ý với Thỏa thuận sử dụng và thừa nhận rằng bạn đã đọc Chính sách bảo mật"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_horizontal"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+        
+    </LinearLayout>
+
+
+</RelativeLayout>

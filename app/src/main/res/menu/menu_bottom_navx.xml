@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_play"
+        android:title="Đang nghe"
+        android:icon="@drawable/play_selector">
+    </item>
+
+    <item android:id="@+id/action_home"
+        android:title="Khám phá"
+        android:icon="@drawable/home_selector">
+    </item>
+
+    <item android:id="@+id/action_personalx"
+        android:title="Cá nhân"
+        android:icon="@drawable/personal_selector">
+    </item>
+</menu>
