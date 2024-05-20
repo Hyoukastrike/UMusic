@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import music.AudioModel;
+import music.BXHMusic;
 import music.Music;
 import music.MusicAdapter;
 import music.MusicListAdapter;
@@ -38,11 +39,14 @@ public class PlayFragment extends Fragment {
     ImageView pausePlay, btnNext, btnPrevious, icMusic, btnVolume;
     ArrayList<AudioModel> songLists;
     ArrayList<Music> songOnlineLists;
+    ArrayList<BXHMusic> songOnlineListsBXH;
     AudioModel currentSong;
     MediaPlayer mediaPlayerOnline;
     Music currentOnlineSong;
+    BXHMusic currentOnlineSongBXH;
     MediaPlayer mediaPlayer = MyMediaPlayer.getInstance();
     boolean isPlayingSongList;
+    boolean isPlayingSongListBXH;
 //    MediaPlayer mediaPlayerOnline = MyMediaPlayer.getInstance();
     int x = 0;
     private boolean isMuted = false;
@@ -154,6 +158,7 @@ public class PlayFragment extends Fragment {
         songLists = (ArrayList<AudioModel>) getActivity().getIntent().getSerializableExtra("LIST");
         songOnlineLists = (ArrayList<Music>) getActivity().getIntent().getSerializableExtra("ONLINE");
         isPlayingSongList = getActivity().getIntent().getBooleanExtra("IS_PLAYING_SONG_LIST", true);
+        isPlayingSongListBXH = getActivity().getIntent().getBooleanExtra("IS_PLAYING_SONG_LIST_BXH", true);
 
 
 
@@ -192,7 +197,7 @@ public class PlayFragment extends Fragment {
     private void playMusic() {
         if (!isPlayingSongList) {
             playOfflineMusic();
-        } else {
+        } else{
             playOnlineMusic();
         }
     }
@@ -215,22 +220,29 @@ public class PlayFragment extends Fragment {
     void setResourcesWithMusicOnline(){
         if (songOnlineLists == null){
             return;
+        }else {
+            if (MyMediaPlayer.currentIndex >= 0 && MyMediaPlayer.currentIndex < songOnlineLists.size()) {
+                currentOnlineSong = songOnlineLists.get(MyMediaPlayer.currentIndex);
+            } else {
+                // Handle the case where the index is out of bounds
+                // For example, set currentOnlineSong to a default value or handle the error appropriately
+                Toast.makeText(getContext(), "Thử lại", Toast.LENGTH_SHORT);
+            }
+
+            tvTitle.setText(currentOnlineSong.getTitle_music());
+            tvTotalTime.setText(convertToMMSS(currentOnlineSong.getDuration()));
+            pausePlay.setOnClickListener(v -> pausePlay());
+            btnNext.setOnClickListener(v -> playNextSong());
+            btnPrevious.setOnClickListener(v -> playPreviousSong());
+
+            playMusic();
         }
-        currentOnlineSong = songOnlineLists.get(MyMediaPlayer.currentIndex);
-
-        tvTitle.setText(currentOnlineSong.getTitle_music());
-        tvTotalTime.setText(convertToMMSS(currentOnlineSong.getDuration()));
-        pausePlay.setOnClickListener(v -> pausePlay());
-        btnNext.setOnClickListener(v -> playNextSong());
-        btnPrevious.setOnClickListener(v -> playPreviousSong());
-
-        playMusic();
     }
 
     private void setResourcesWithMusic() {
         if (!isPlayingSongList) {
             setResourcesWithMusicOffline();
-        } else {
+        } else{
             setResourcesWithMusicOnline();
         }
     }
@@ -265,15 +277,21 @@ public class PlayFragment extends Fragment {
 
     @SuppressLint("DefaultLocale")
     public static String convertToMMSS(String duration){
-        Long millis = Long.parseLong(duration);
-        return String.format("%02d:%02d",
-                TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
-                TimeUnit.MILLISECONDS.toSeconds(millis) % TimeUnit.MINUTES.toSeconds(1));
+        Long millis = null;
+        String time = null;
+        if (duration != null && !duration.isEmpty()) {
+            try {
+                millis = Long.parseLong(duration);
+                time = String.format("%02d:%02d",
+                        TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
+                        TimeUnit.MILLISECONDS.toSeconds(millis) % TimeUnit.MINUTES.toSeconds(1));
+            } catch (NumberFormatException e) {
+                // Handle the case where `duration` is not a valid numeric string
+                e.printStackTrace();
+                // Set a default value or handle the error appropriately
+            }
+        }
+        return time;
     }
-
-
-
-
-
 
 }

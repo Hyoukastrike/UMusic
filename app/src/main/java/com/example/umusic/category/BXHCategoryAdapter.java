@@ -13,8 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.umusic.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import music.BXHMusic;
 import music.BXHMusicAdapter;
 
 public class BXHCategoryAdapter extends RecyclerView.Adapter<BXHCategoryAdapter.BXHCategoryViewHolder> {
@@ -51,7 +53,7 @@ public class BXHCategoryAdapter extends RecyclerView.Adapter<BXHCategoryAdapter.
         holder.rvBXHMusics.setLayoutManager(linearLayoutManager);
 
         BXHMusicAdapter bxhMusicAdapter = new BXHMusicAdapter();
-        bxhMusicAdapter.setData(bxhCategory.getBxhMusics());
+        bxhMusicAdapter.setData((ArrayList<BXHMusic>) bxhCategory.getBxhMusics(), mContext);
         holder.rvBXHMusics.setAdapter(bxhMusicAdapter);
     }
 

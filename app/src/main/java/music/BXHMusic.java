@@ -1,6 +1,8 @@
 package music;
 
-public class BXHMusic {
+import java.io.Serializable;
+
+public class BXHMusic implements Serializable {
     private String duration;
     private String id;
 
