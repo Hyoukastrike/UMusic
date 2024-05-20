@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.umusic.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -36,8 +37,9 @@ public class BXHMusicAdapter extends RecyclerView.Adapter<BXHMusicAdapter.BXHMus
             return;
         }
 
-        holder.imgBXHMusic.setImageResource(bxhMusic.getResourceId());
-        holder.tvNums.setText(bxhMusic.getNums());
+
+        Picasso.get().load(bxhMusic.getImg()).fit().into(holder.imgBXHMusic);
+
         holder.tvTitleBXHMusic.setText(bxhMusic.getTitle_music());
         holder.tvTitleBXHAuthor.setText(bxhMusic.getTitle_author());
     }
@@ -61,7 +63,6 @@ public class BXHMusicAdapter extends RecyclerView.Adapter<BXHMusicAdapter.BXHMus
             super(itemView);
 
             imgBXHMusic = itemView.findViewById(R.id.img_bxhmusic);
-            tvNums = itemView.findViewById(R.id.tv_nums);
             tvTitleBXHMusic = itemView.findViewById(R.id.tv_title);
             tvTitleBXHAuthor = itemView.findViewById(R.id.tv_author);
         }

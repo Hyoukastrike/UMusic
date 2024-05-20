@@ -7,6 +7,8 @@ import java.util.List;
 import music.BXHMusic;
 
 public class BXHCategory {
+
+
     private String nameBXHCategory;
     private int imgPlay;
     private List<BXHMusic> bxhMusics;
@@ -15,6 +17,10 @@ public class BXHCategory {
         this.nameBXHCategory = nameBXHCategory;
         this.imgPlay = imgPlay;
         this.bxhMusics = bxhMusics;
+    }
+
+    public BXHCategory(){
+
     }
 
     public String getNameBXHCategory() {

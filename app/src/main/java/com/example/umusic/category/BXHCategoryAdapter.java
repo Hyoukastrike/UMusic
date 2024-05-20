@@ -45,7 +45,7 @@ public class BXHCategoryAdapter extends RecyclerView.Adapter<BXHCategoryAdapter.
         }
 
         holder.tvNameBXHCategory.setText(bxhCategory.getNameBXHCategory());
-        holder.imgPlayBtn.setImageResource(bxhCategory.getImgPlay());
+//        holder.imgPlayBtn.setImageResource(bxhCategory.getImgPlay());
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext,RecyclerView.VERTICAL,false);
         holder.rvBXHMusics.setLayoutManager(linearLayoutManager);

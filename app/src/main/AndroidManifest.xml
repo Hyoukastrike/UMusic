@@ -19,7 +19,7 @@
         android:theme="@style/Theme.UMusic"
         tools:targetApi="31">
         <activity
-            android:name=".Test"
+            android:name=".PlayActivityOnline"
             android:exported="false" />
         <activity
             android:name=".PlaylistOffline"

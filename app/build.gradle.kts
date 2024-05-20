@@ -43,10 +43,11 @@ dependencies {
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation ("com.github.dhaval2404:imagepicker:2.1")
-    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-database:21.0.0")
     implementation ("com.aurelhubert:ahbottomnavigation:2.3.4")
     implementation ("nl.joery.animatedbottombar:library:1.1.0")
     implementation("com.google.firebase:firebase-storage")
+    implementation ("com.squareup.picasso:picasso:2.71828")
 
     //Responsive
     implementation ("com.intuit.sdp:sdp-android:1.1.0")

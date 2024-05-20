@@ -74,6 +74,8 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.Musi
                 Intent intent = new Intent(context, MainActivity.class);
                 intent.putExtra("LIST", songLists);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                boolean isPlayingSongList = false; // Set the appropriate value here
+                intent.putExtra("IS_PLAYING_SONG_LIST", isPlayingSongList);
                 context.startActivity(intent);
 
 

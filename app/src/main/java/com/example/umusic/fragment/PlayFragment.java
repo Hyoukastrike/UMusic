@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,8 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import music.AudioModel;
+import music.Music;
+import music.MusicAdapter;
 import music.MusicListAdapter;
 import music.MyMediaPlayer;
 
@@ -34,16 +37,22 @@ public class PlayFragment extends Fragment {
     SeekBar seekBar;
     ImageView pausePlay, btnNext, btnPrevious, icMusic, btnVolume;
     ArrayList<AudioModel> songLists;
+    ArrayList<Music> songOnlineLists;
     AudioModel currentSong;
+    MediaPlayer mediaPlayerOnline;
+    Music currentOnlineSong;
     MediaPlayer mediaPlayer = MyMediaPlayer.getInstance();
+    boolean isPlayingSongList;
+//    MediaPlayer mediaPlayerOnline = MyMediaPlayer.getInstance();
     int x = 0;
     private boolean isMuted = false;
 
     public PlayFragment(){
 
     }
-    public PlayFragment(ArrayList<AudioModel> songLists) {
+    public PlayFragment(ArrayList<AudioModel> songLists, ArrayList<Music> songOnlineLists) {
         this.songLists = songLists;
+        this.songOnlineLists = songOnlineLists;
     }
 
 
@@ -53,6 +62,7 @@ public class PlayFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_play, container, false);
 
         InitUi(view);
+//        Toast.makeText(getContext(),currentOnlineSong.getPath().toString(),Toast.LENGTH_SHORT);
         setResourcesWithMusic();
 
         PlayFragment.this.getActivity().runOnUiThread(new Runnable() {
@@ -72,6 +82,7 @@ public class PlayFragment extends Fragment {
                     }
 
                 }
+
                 new Handler().postDelayed(this, 100);
             }
         });
@@ -82,6 +93,7 @@ public class PlayFragment extends Fragment {
                 if (mediaPlayer != null && fromUser){
                     mediaPlayer.seekTo(progress);
                 }
+
             }
 
             @Override
@@ -137,12 +149,17 @@ public class PlayFragment extends Fragment {
         btnPrevious = view.findViewById(R.id.previous);
         btnVolume = view.findViewById(R.id.volume);
         icMusic = view.findViewById(R.id.music_icon_big);
+        mediaPlayerOnline = new MediaPlayer();
 
         songLists = (ArrayList<AudioModel>) getActivity().getIntent().getSerializableExtra("LIST");
+        songOnlineLists = (ArrayList<Music>) getActivity().getIntent().getSerializableExtra("ONLINE");
+        isPlayingSongList = getActivity().getIntent().getBooleanExtra("IS_PLAYING_SONG_LIST", true);
+
+
 
     }
 
-    private void playMusic(){
+    private void playOfflineMusic(){
         mediaPlayer.reset();
         try {
             mediaPlayer.setDataSource(currentSong.getPath());
@@ -157,7 +174,30 @@ public class PlayFragment extends Fragment {
 
     }
 
-    void setResourcesWithMusic(){
+    private void playOnlineMusic(){
+        mediaPlayer.reset();
+        try {
+            mediaPlayer.setDataSource(currentOnlineSong.getPath());
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+            seekBar.setProgress(0);
+            seekBar.setMax(mediaPlayer.getDuration());
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    private void playMusic() {
+        if (!isPlayingSongList) {
+            playOfflineMusic();
+        } else {
+            playOnlineMusic();
+        }
+    }
+
+    void setResourcesWithMusicOffline(){
         if (songLists == null){
             return;
         }
@@ -172,6 +212,29 @@ public class PlayFragment extends Fragment {
         playMusic();
     }
 
+    void setResourcesWithMusicOnline(){
+        if (songOnlineLists == null){
+            return;
+        }
+        currentOnlineSong = songOnlineLists.get(MyMediaPlayer.currentIndex);
+
+        tvTitle.setText(currentOnlineSong.getTitle_music());
+        tvTotalTime.setText(convertToMMSS(currentOnlineSong.getDuration()));
+        pausePlay.setOnClickListener(v -> pausePlay());
+        btnNext.setOnClickListener(v -> playNextSong());
+        btnPrevious.setOnClickListener(v -> playPreviousSong());
+
+        playMusic();
+    }
+
+    private void setResourcesWithMusic() {
+        if (!isPlayingSongList) {
+            setResourcesWithMusicOffline();
+        } else {
+            setResourcesWithMusicOnline();
+        }
+    }
+
     private void playNextSong(){
         if (songLists == null){
             return;
@@ -179,6 +242,7 @@ public class PlayFragment extends Fragment {
         else if (MyMediaPlayer.currentIndex == songLists.size()-1){
             return;
         }
+
         MyMediaPlayer.currentIndex += 1;
         mediaPlayer.reset();
         setResourcesWithMusic();
@@ -206,6 +270,10 @@ public class PlayFragment extends Fragment {
                 TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
                 TimeUnit.MILLISECONDS.toSeconds(millis) % TimeUnit.MINUTES.toSeconds(1));
     }
+
+
+
+
 
 
 }
